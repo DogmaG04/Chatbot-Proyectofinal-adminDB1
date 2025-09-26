@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok Style - Soporte Técnico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar estilo Grok -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🗣️</span>
+                    <h1 class="app-title">GrokTech</h1>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="nav-menu">
+                    <div class="nav-item active" data-section="chatbot">
+                        <span class="nav-icon">🤖</span>
+                        <span class="nav-text">Asistente</span>
+                    </div>
+                    <div class="nav-item" data-section="documents">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">Base de Conocimiento</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Área principal de chat -->
+        <main class="chat-area">
+            <!-- Header del chat -->
+            <header class="chat-header">
+                <div class="header-left">
+                    <h2>Asistente de Soporte Técnico</h2>
+                    <span class="status-dot"></span>
+                    <span class="status-text">En línea</span>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn">
+                        <span>⚙️</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Sección del chatbot -->
+            <section id="chatbot-section" class="content-section active">
+                <div class="chat-container">
+                    <div id="chat" class="chat-messages">
+                        <div class="welcome-message">
+                            <div class="welcome-icon">🗣️</div>
+                            <h2>¡Hola! Soy tu asistente GrokTech</h2>
+                            <p>Pregúntame sobre problemas técnicos, configuración de redes, errores comunes y más.</p>
+                            <div class="quick-questions">
+                                <div class="quick-question" onclick="insertQuickQuestion('¿Cómo solucionar problemas de WiFi?')">
+                                    ¿Cómo solucionar problemas de WiFi?
+                                </div>
+                                <div class="quick-question" onclick="insertQuickQuestion('¿Qué significa el error 404?')">
+                                    ¿Qué significa el error 404?
+                                </div>
+                                <div class="quick-question" onclick="insertQuickQuestion('¿Cómo restablecer mi contraseña?')">
+                                    ¿Cómo restablecer mi contraseña?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-container">
+                        <div class="input-wrapper">
+                            <input type="text" id="query-input" class="chat-input" 
+                                   placeholder="Escribe tu pregunta técnica... (Presiona Enter para enviar)">
+                            <button id="send-button" class="send-button">
+                                <span class="send-icon">↪</span>
+                            </button>
+                        </div>
+                        <div class="input-footer">
+                            <span class="hint-text">GrokTech puede cometer errores. Verifica la información importante.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de documentos -->
+            <section id="documents-section" class="content-section">
+                <div class="documents-container">
+                    <div class="documents-header">
+                        <h2>Base de Conocimiento</h2>
+                        <p>Gestiona la documentación técnica del sistema</p>
+                    </div>
+                    
+                    <div class="document-form">
+                        <div class="form-group">
+                            <label for="doc-title">Título del documento</label>
+                            <input type="text" id="doc-title" class="form-input" 
+                                   placeholder="Ej: Solución a problemas de conexión WiFi">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="doc-content">Contenido técnico</label>
+                            <textarea id="doc-content" class="form-textarea" 
+                                      placeholder="Describe detalladamente el procedimiento, solución o información técnica..."></textarea>
+                        </div>
+                        
+                        <button id="add-document" class="submit-button">
+                            <span class="button-icon">+</span>
+                            Agregar a la base de conocimiento
+                        </button>
+                    </div>
+                    
+                    <div class="documents-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Documentos técnicos</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">Precisión</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
